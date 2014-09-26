@@ -2,9 +2,9 @@
 Contributors: OddOneOut
 Donate link: http://betterwp.net/wordpress-plugins/bwp-minify/
 Tags: minify, minify js, minify css, minify javascript, minify stylesheet, minification, optimization, optimize, stylesheet, css, javascript, js
-Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.3.0
+Requires at least: 3.1
+Tested up to: 4.0
+Stable tag: 1.3.3
 License: GPLv3 or later
 
 Allows you to combine and minify your CSS and JS files to improve page load time.
@@ -82,6 +82,29 @@ Please [help translate](http://betterwp.net/wordpress-tips/create-pot-file-using
 4. Minify in action!
 
 == Changelog ==
+
+= 1.3.3 =
+	* Fixed an issue with wrong `min/config.php` file.
+
+= 1.3.2 =
+	* Marked as WordPress 4.0 compatible
+	* When updating BWP Minify, friendly minify url should be turned off automatically if required rewrite rules are not found. An appropriate error message will be shown once to notify owners of the site so that they can take appropriate actions.
+	* When friendly minify url is enabled, rewrite rules for both Apache and Nginx will be shown. This is to add support for Nginx as a reverse proxy.
+	* Fixed a bug that makes the detector fail to commit logs, which results in empty enqueued file lists.
+	* Other minor fixes and enhancements.
+	* BWP Minify now requires WordPress 3.1.0 or later.
+
+= 1.3.1 =
+* **Enhancements**
+    * Added an option to leave external enqueued files at their original positions.
+    * Added compatibility for Maintenance plugin (BWP Minify will be inactive when Maintenance mode is on).
+    * Improved settings on `Manage enqueued files` admin page to allow better control over enqueued files. Take a look at [this updated section](http://betterwp.net/wordpress-plugins/bwp-minify/#manage_enqueued_files) of official documentation for more details.
+    * Improved friendly minify url feature to work better with cache plugins: friendly urls should show up on first load.
+* **Bugs fixed**
+    * Fixed an issue where CDN hosts don't replace the original host properly
+    * Fixed an issue with SSL on `wp-login.php` page
+
+**Important Note**: After updating to 1.3.1, users of `Simple Google Maps Short Code` plugin (or similar ones) and `Avada` theme should go to *BWP Minify > General Options* and turn on `Leave external files at their original positions?` setting to make map shortcodes work.
 
 = 1.3.0 =
 * **New Features**

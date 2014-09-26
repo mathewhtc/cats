@@ -40,6 +40,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 			$this->sectionstabs = array(
 				'01' => array('anchor' => 'general','description' => __('general','szgoogleadmin')),
 				'02' => array('anchor' => 'reviews','description' => __('reviews','szgoogleadmin')),
+				'03' => array('anchor' => 'modules','description' => __('modules','szgoogleadmin')),
 			);
 
 			$this->sections = array(
@@ -54,11 +55,12 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 				array('tab' => '01','section' => 'sz-google-admin-documentation-translate.php'    ,'title' => ucwords(__('google translate','szgoogleadmin'))),
 				array('tab' => '01','section' => 'sz-google-admin-documentation-youtube.php'      ,'title' => ucwords(__('youtube','szgoogleadmin'))),
 				array('tab' => '02','section' => 'sz-google-admin-documentation-reviews.php'      ,'title' => ucwords(__('reviews','szgoogleadmin'))),
+				array('tab' => '03','section' => 'sz-google-admin-documentation-modules.php'      ,'title' => ucwords(__('modules','szgoogleadmin'))),
 			);
 
-			$this->sectionstitle   = $this->menutitle;
-			$this->sectionsoptions = 'sz_google_options_documentation';
 			$this->formsavebutton  = '0';
+			$this->sectionstitle   = $this->menutitle;
+			$this->sectionsoptions = array('sz_google_options_documentation');
 
 			// Richiamo la funzione della classe padre per elaborare le
 			// variabili contenenti i valori di configurazione sezione
@@ -152,6 +154,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 				'09' => array('section' => 'sz_google_documentation_translate'    ,'title' => $this->null,'callback' => array($this,'moduleAddHelpTranslate')    ,'slug' => 'sz-google-admin-documentation-translate.php'),
 				'10' => array('section' => 'sz_google_documentation_youtube'      ,'title' => $this->null,'callback' => array($this,'moduleAddHelpYoutube')      ,'slug' => 'sz-google-admin-documentation-youtube.php'),
 				'11' => array('section' => 'sz_google_documentation_reviews'      ,'title' => $this->null,'callback' => array($this,'moduleAddHelpReviews')      ,'slug' => 'sz-google-admin-documentation-reviews.php'),
+				'12' => array('section' => 'sz_google_documentation_modules'      ,'title' => $this->null,'callback' => array($this,'moduleAddHelpModules')      ,'slug' => 'sz-google-admin-documentation-modules.php'),
 			);
 
 			// Richiamo la funzione della classe padre per elaborare le
@@ -171,7 +174,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 			foreach ($options as $key => $value) 
 			{
 				echo '<div class="help-items">';
-				echo '<div class="help-image"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'"><img src="'.plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/images/help/'.basename($value['slug'],".php").'.png" alt=""></a></div>';
+				echo '<div class="help-image"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'"><img src="'.plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/images/help/'.basename($value['slug'],".php").'.jpg" alt=""></a></div>';
 				echo '<div class="help-title"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'">'.ucwords($value['title']).'</a></div>';
 				echo '</div>';
 			}
@@ -309,11 +312,19 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 		}
 
 		/**
-		 * Funzioni per aggiungere le varie sezioni che riguardano
+		 * Funzione per aggiungere le varie sezioni che riguardano
 		 * il tab delle reviews presente nella documentazione del plugin
 		 */
 		function moduleAddHelpReviews() {
 			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/templates/sz-google-template-reviews.php');
+		}
+
+		/**
+		 * Funzione per aggiungere le varie sezioni che riguardano
+		 * il tab dei moduli presente nella documentazione del plugin
+		 */
+		function moduleAddHelpModules() {
+			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/templates/sz-google-template-modules.php');
 		}
 
 		/**

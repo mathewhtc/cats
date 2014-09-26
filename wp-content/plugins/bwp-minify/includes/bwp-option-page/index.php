@@ -1,3 +1,3 @@
-<?php
-	// White page
+<?php
+	// White page
 ?>

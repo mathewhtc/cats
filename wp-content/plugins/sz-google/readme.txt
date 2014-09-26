@@ -1,8 +1,8 @@
 === SZ - Google for WordPress ===
 Contributors: massimodellarovere,iGenius
 Requires at least: 3.5
-Tested up to: 3.8
-Stable tag: 1.7.5
+Tested up to: 4.0
+Stable tag: 1.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F6K9EMHKWRFPL
@@ -13,9 +13,9 @@ Plugin to integrate Google's products in WordPress with particular attention for
 == Description ==
 <a href="http://wordpress.org/extend/plugins/sz-google/">English</a> - <a href="http://goo.gl/czjnz">Italiano</a> - <a href="http://goo.gl/Jt0YN">Español</a> - <a href="http://goo.gl/jnxWm">Français</a> - <a href="http://goo.gl/eXk1j">Deutsch</a>
 
-Plugin to integrate Google's products in WordPress with particular attention to the widgets provided by the social network Google+. The Google products are many and so this plugin will be a kind of development "step to step" which will be developed a little bit at a time depending on the availability of time that we can devote. In any case, we will always be willing to consider new requests for anyone who wants to ask for a new feature to be developed in the plugin. Write all your requests on our <a href="https://plus.google.com/communities/109254048492234113886">official community</a>.
+Plugin to integrate Google's products in WordPress with particular attention to the widgets provided by the social network Google+. The Google products are many and so this plugin will be a kind of development "step to step" which will be developed a little bit at a time depending on the availability of time that we can devote.
 
-To be informed about the features that gradually will be released you can follow this link page <a href="https://wpitalyplus.com/sz-google/">sz-google for wordpress</a>, which will be a sort of official article where as I integrate the new features released, otherwise you can follow the community of <a href="https://plus.google.com/communities/109254048492234113886">WP Italyplus</a> where surely will be included the latest news that will affect this plugin. The plugin sz-google contain several modules, we recommend you activate from the admin panel only the functions that you will use and do not use unnecessary memory resources.
+* <a href="https://otherplus.com/tech/wordpress-plugin/sz-google/">(IT) - Documentazione in Italiano</a>
 
 = Modules available in plugin =
 **<a href="http://wordpress.org/plugins/sz-google/"> </a>**
@@ -35,11 +35,6 @@ To be informed about the features that gradually will be released you can follow
 
 = Google+ social network module =
 **<a href="http://wordpress.org/plugins/sz-google/"> </a>**
-
-* <a href="https://wpitalyplus.com/sz-google/google-badges/">Demo online - Google plus badges</a>
-* <a href="https://wpitalyplus.com/sz-google/google-buttons/">Demo online - Google plus buttons</a>
-* <a href="https://wpitalyplus.com/sz-google/google-comments/">Demo online - Google plus comments</a>
-* <a href="https://wpitalyplus.com/sz-google/google-posts/">Demo online - Google plus embedded post</a>
 
 **Google+ Badges:** With this plugin can be inserted in your blog most of the badges available to google for its social network, for example, we can use the badge for profiles, one for the pages or the one dedicated to the community. These components can be used as a widget for use in or as a sidebar and as shortcode to use in the articles. You can also use the php functions to customize your own theme directly with programming code.
 
@@ -87,9 +82,9 @@ To be informed about the features that gradually will be released you can follow
 * `szgoogle_gplus_get_button_share()`
 * `szgoogle_gplus_get_button_follow()`
 * `szgoogle_gplus_get_comments()`
-* `szgoogle_gplus_get_contact_page`
-* `szgoogle_gplus_get_contact_community`
-* `szgoogle_gplus_get_contact_bestpost`
+* `szgoogle_gplus_get_contact_page()`
+* `szgoogle_gplus_get_contact_community()`
+* `szgoogle_gplus_get_contact_bestpost()`
 * `szgoogle_gplus_get_post()`
 
 = Google Analytics module =
@@ -106,7 +101,7 @@ To be informed about the features that gradually will be released you can follow
 * `Google analytics enable multiple top domains.`
 * `Google analytics enable advertiser.`
 
-**Position code:** To insert the code you can choose the header of the web page (the recommended one) or footer, but if you want to customize the position used manual entry and enter the function directly `szgoogle_analytics_get_code()` in your theme manually.
+**Position code:** To insert the code you can choose the header of the web page (the recommended one) or footer, but if you want to customize the position used manual entry and enter the function `szgoogle_analytics_get_code()` in your theme manually.
 
 **Google Analytics Functions:** The functions unlike the other components can be used for programming in PHP and allow customization of themes and decide the placements details that do not perform a predefined standard. Code is disabled by default for users connected.
 
@@ -130,10 +125,23 @@ the configuration and synchronization of the key will be performed quickly and e
 * `szgoogle_authenticator_get_login_field()`
 * `szgoogle_authenticator_verify_code()`
 
-= Google Drive module =
+= Google Calendar =
 **<a href="http://wordpress.org/plugins/sz-google/"> </a>**
 
-* <a href="https://wpitalyplus.com/sz-google/google-drive-save-button/">Demo online - Google drive save button</a>
+**Google Calendar Widgets:** In this plugin are available google calendar widgets that can be directly inserted on the sidebar of your website. All the configuration parameters can be found on the widget itself after you dragged to the sidebar that interests you.
+
+* `Widget google calendar`
+
+**Google Calendar Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google groups in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
+
+* `[sz-calendar].....: googe calendar embed`
+
+**Google Calendar Functions:** The functions unlike the other components can be used for programming in PHP and allow customization of themes and decide the placements details that do not perform a predefined standard.
+
+* `szgoogle_calendar_get_widget()`
+
+= Google Drive module =
+**<a href="http://wordpress.org/plugins/sz-google/"> </a>**
 
 **Google Drive Widgets:** In this plugin are available google groups widgets that can be directly inserted on the sidebar of your website. All the configuration parameters can be found on the widget itself after you dragged to the sidebar that interests you.
 
@@ -141,7 +149,7 @@ the configuration and synchronization of the key will be performed quickly and e
 * `Widget google drive viewer`
 * `Widget google drive for button save`
 
-**Google Drive Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google groups in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Drive Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google groups in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-drive-embed].....: googe drive embed`
 * `[sz-drive-viewer]....: googe drive viewer`
@@ -156,13 +164,11 @@ the configuration and synchronization of the key will be performed quickly and e
 = Google Groups module =
 **<a href="http://wordpress.org/plugins/sz-google/"> </a>**
 
-* <a href="https://wpitalyplus.com/sz-google/google-groups/">Demo online - Google Groups</a>
-
 **Google Groups Widgets:** In this plugin are available google groups widgets that can be directly inserted on the sidebar of your website. All the configuration parameters can be found on the widget itself after you dragged to the sidebar that interests you.
 
 * `Widget google groups embed`
 
-**Google Groups Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google groups in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Groups Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google groups in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-ggroups] ........: google translate widget`
 
@@ -177,7 +183,7 @@ the configuration and synchronization of the key will be performed quickly and e
 
 * `Widget hangouts with starter button`
 
-**Google Hangouts Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google hangouts in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Hangouts Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google hangouts in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-hangouts-start] .: google hangouts starter button`
 
@@ -190,13 +196,11 @@ the configuration and synchronization of the key will be performed quickly and e
 
 With this module you can insert widgets with photo galleries present on panoramio. You can select photos by user, group or tag. You can choose between different display layouts as photo, slideshow, list and photo_list with navigation menu.
 
-* <a href="https://wpitalyplus.com/sz-google/google-panoramio/">Demo online - Panoramio</a>
-
 **Google Panoramio Widgets:** In this plugin are available to google panoramio widgets that can be directly inserted on the sidebar of your website. All the configuration parameters can be found on the widget itself after you dragged to the sidebar that interests you.
 
 * `Widget google panoramio`
 
-**Google Panoramio Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Panoramio Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-panoramio] ......: google panoramio photo widget`
 
@@ -211,7 +215,7 @@ With this module you can insert widgets with photo galleries present on panorami
 
 * `Widget google translate tools`
 
-**Google Translate Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Translate Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-gtranslate] .....: google translate widget`
 
@@ -226,22 +230,19 @@ With this module you can insert widgets with photo galleries present on panorami
 
 With this module you can insert into a wordpress page a video on youtube. you can customize many parameters and integrating different modes of insertion, you can choose the theme, set parameters such as autoplay, loop and fullscreen, you can attivae the beneficiaries of google Analytis for the actions that are performed on the video embed.
 
-* <a href="https://wpitalyplus.com/sz-google/youtube-video/">Demo online - Youtube video</a>
-* <a href="https://wpitalyplus.com/sz-google/youtube-playlist/">Demo online - Youtube playlist</a>
-* <a href="https://wpitalyplus.com/sz-google/youtube-badges/">Demo online - Youtube buttons and badges</a>
-
-**Google Youtube Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself, to know all the parameters available to read the official documentation.
+**Google Youtube Shortcodes:** The shortcode made ​​available to allow the insertion of the components of google translate in a post or on a page in wordpress. Each has shortcode of customization parameters that can be specified in the code itself.
 
 * `[sz-ytvideo] ........: embed youtube video`
 * `[sz-ytplaylist] .....: embed youtube playlist`
 * `[sz-ytbadge] ........: embed youtube badge`
 * `[sz-ytbutton] .......: embed youtube button`
-* `[sz-yttext] .........: embed youtube link`
+* `[sz-ytlink] .........: embed youtube link`
 
 **Google Youtube Widgets:** In this plugin are available to google youtube widgets that can be directly inserted on the sidebar of your website. All the configuration parameters can be found on the widget itself after you dragged to the sidebar that interests you.
 
 * `Widget embed youtube video`
 * `Widget embed youtube playlist`
+* `Widget embed youtube badge`
 
 **Google Youtube Functions:** The functions unlike the other components can be used for programming in PHP and allow customization of themes and decide the placements details that do not perform a predefined standard.
 
@@ -294,7 +295,7 @@ If you have problems during the installation of this plugin please contact us di
 <a href="http://wordpress.org/plugins/sz-google/faq/">English</a> - <a href="http://goo.gl/2co5W">Italiano</a> - <a href="http://goo.gl/SJIhR">Español</a> - <a href="http://goo.gl/hDYgZ">Français</a> - <a href="http://goo.gl/wz6ZV">Deutsch</a>
 
 = You can see a demo before the installation? =
-Yes, we have made available demonstration of the pages where the plugin installed to view the latest version of WordPress available at the moment. You can visit the specific web page <a href="https://wpitalyplus.com/sz-google/">SZ-Google Demo</a> to display many components in live demo.
+Yes, we have made available demonstration of the pages where the plugin installed to view the latest version of WordPress available at the moment. You can visit the specific web page <a href="https://otherplus.com/tech/sz-google/">SZ-Google Demo</a> to display many components in live demo.
 
 = All these functions in a single plugin affect performance? =
 The plugin was written in separate modules that are activated only on request. This allows saving both memory of CPU, obviously if all functions are activated the plugin needs resources, however senpre less than installing a high number of different plugins.
@@ -321,6 +322,39 @@ Before you use the google translate module must register the site that you want 
 == Changelog ==
 
 <a href="http://wordpress.org/plugins/sz-google/changelog/">English</a> - <a href="http://goo.gl/jMOcQ">Italiano</a> - <a href="http://goo.gl/6G8dH">Español</a> - <a href="http://goo.gl/WwtPs">Français</a> - <a href="http://goo.gl/VHbwt">Deutsch</a>
+
+= Version 1.7.9 =
+* Feature: Add POPUP shortcode Google+.
+* Feature: Add POPUP shortcode Calendar.
+* Feature: Add POPUP shortcode Drive.
+* Feature: Add POPUP shortcode Groups.
+* Feature: Add POPUP shortcode Hangouts.
+* Feature: Add POPUP shortcode Panoramio.
+* Feature: Add POPUP shortcode Youtube.
+* Feature: Add external resource help italiano.
+* Feature: Add TinyMCE fonts family and size.
+
+= Version 1.7.8 =
+* Fix: List of reviews.
+* Fix: Some translation strings.
+* Fix: File README for new link and contents.
+* Feature: Add emergency code authenticator.
+
+= Version 1.7.7 =
+* Fix: Reduce size of plugin.
+* Fix: Reduce size of screenshot.
+* Fix: Google Calendar shortcode bug.
+* Fix: Google Calendar widget bug.
+* Fix: Remove images for documentation.
+* Feature: Add icons for wordpress 4.0.
+* Feature: Google Analytics display features.
+
+= Version 1.7.6 =
+* Fix: Widget Youtube playlist with autoplay.
+* Fix: File README for new link and contents.
+* Fix: Enable google api (beta version).
+* Fix: Documentazione bug and incorrect words.
+* Fix: Youtube option start/end seconds.
 
 = Version 1.7.5 =
 * Fix: Documentation drive embed.

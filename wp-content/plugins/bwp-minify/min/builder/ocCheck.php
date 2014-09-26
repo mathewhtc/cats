@@ -26,8 +26,8 @@ if (isset($_GET['hello'])) {
         'content' => 'World!'
         ,'method' => 'deflate'
     ));
-    $he->encode();
-    $he->sendAll();
+    $he->encode();
+    $he->sendAll();
 
 } else {
     // echo status "0" or "1"

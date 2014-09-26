@@ -36,12 +36,13 @@ class BWP_Minify_CDN
 		if (empty($cdn_host))
 			return $string;
 
-
 		// force SSL when WordPress is on SSL, or use scheme-less URL
 		$ssl_type = $this->_options['select_cdn_ssl_type'];
+
 		$scheme = is_ssl() ? 'https://' : 'http://';
 		$scheme = 'less' == $ssl_type ? '//' : $scheme;
 		$scheme = 'off' == $ssl_type ? 'http://' : $scheme;
+
 		$string = preg_replace('#https?://[^/]+#ui',
 			$scheme . $cdn_host,
 			$string
@@ -75,7 +76,7 @@ class BWP_Minify_CDN
 	{
 		// priority 11 to make sure that this filter is applied after the
 		// fetcher class has finished friendlifying the Minify string
-		add_filter('bwp_get_minify_src', array($this, 'replace_host'), 11, 2);
+		add_filter('bwp_minify_get_src', array($this, 'replace_host'), 11, 2);
 	}
 
 	private function _init()

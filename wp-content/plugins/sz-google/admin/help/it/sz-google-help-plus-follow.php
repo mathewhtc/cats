@@ -8,12 +8,6 @@
 if (!defined('SZ_PLUGIN_GOOGLE') or !SZ_PLUGIN_GOOGLE) die(); 
 
 /**
- * Definizione variabili per calcolare percorsi, immagini
- * e qualsiasi risorsa che debba essere specificata in EOD
- */
-$IMAGE1 = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/images/others/sz-google-plus-button-follow.jpg';
-
-/**
  * Definizione variabile HTML per la preparazione della stringa
  * che contiene la documentazione di questa funzionalità
  */
@@ -43,7 +37,7 @@ formato opzione="valore". Se volete avere delle informazioni aggiuntive potete v
 
 <table>
 	<tr><th>Parametro</th>    <th>Descrizione</th>            <th>Valori ammessi</th>            <th>Default</th></tr>
-	<tr><td>url</td>          <td>URL pagina o profilo</td>   <td>stringa</td>                   <td>configurazione</td></tr>
+	<tr><td>url</td>          <td>URL pagina o profilo</td>   <td>stringa,page,profile</td>                   <td>configurazione</td></tr>
 	<tr><td>size</td>         <td>dimensione</td>             <td>small,medium,large</td>        <td>medium</td></tr>
 	<tr><td>width</td>        <td>larghezza</td>              <td>valore</td>                    <td>null</td></tr>
 	<tr><td>annotation</td>   <td>annotazione</td>            <td>inline,bubble,none</td>        <td>none</td></tr>
@@ -97,14 +91,6 @@ if (function_exists('szgoogle_gplus_get_button_follow')) {
   echo szgoogle_gplus_get_button_follow(\$options);
 }
 </pre>
-
-<h2>Schermata</h2>
-
-<p>In questa immagine potete vedere il componente inserito in un post di wordpress, la dimensione e alcune opzioni legate all'aspetto
-possono essere modificate con i parametri di configurazione. La zona più adatta alla pubblicazione di queste informazioni 
-sono le sidebar, ma alcune volte può essere utile inserirli in un'articolo per sponsorizzare una determinata risorsa.</p>
-
-<img class="screen" src="$IMAGE1" alt=""/>
 
 <h2>Avvertenze</h2>
 

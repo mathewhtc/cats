@@ -8,12 +8,6 @@
 if (!defined('SZ_PLUGIN_GOOGLE') or !SZ_PLUGIN_GOOGLE) die(); 
 
 /**
- * Definizione variabili per calcolare percorsi, immagini
- * e qualsiasi risorsa che debba essere specificata in EOD
- */
-$IMAGE1 = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/images/others/sz-google-drive-save-button.jpg';
-
-/**
  * Definizione variabile HTML per la preparazione della stringa
  * che contiene la documentazione di questa funzionalità
  */
@@ -41,7 +35,7 @@ format option = "value". If you would like additional information you can visit 
 <table>
 	<tr><th>Parameter</th>    <th>Description</th>      <th>Allowed values</th>             <th>Default</th></tr>
 	<tr><td>url</td>          <td>file URL address</td> <td>string</td>                     <td>current post</td></tr>
-	<tr><td>filename</td>     <td>file name</td>        <td>small,medium,standard,tail</td> <td>standard</td></tr>
+	<tr><td>filename</td>     <td>file name</td>        <td>value</td>                      <td>null</td></tr>
 	<tr><td>sitename</td>     <td>site name</td>        <td>value</td>                      <td>null</td></tr>
 	<tr><td>text</td>         <td>text</td>             <td>string</td>                     <td>null</td></tr>
 	<tr><td>img</td>          <td>image</td>            <td>string</td>                     <td>null</td></tr>
@@ -87,14 +81,6 @@ if (function_exists('szgoogle_drive_get_savebutton')) {
   echo szgoogle_drive_get_savebutton(\$options);
 }
 </pre>
-
-<h2>Screenshot</h2>
-
-<p>In this picture you can see the end result of this feature. You see a photo with a medium resolution are added underneath the 
-buttons on the drive to store the high-definition files that take up a lot of space. You can use this technique for any type of 
-files such as ZIP, PDF, DOC ect. Remember that the file should still be available on a URL that belongs to the same site.</p>
-
-<img class="screen" src="$IMAGE1" alt=""/>
 
 <h2>Warnings</h2>
 

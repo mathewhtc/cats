@@ -1,2 +1,4 @@
 
 wp-config.php
+wp-content/uploads/
+wp-content/plugins/bwp-minify/cache/

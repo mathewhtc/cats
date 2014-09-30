@@ -20,23 +20,48 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Glyphicon CSS removed by c.bavota
  */
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-body.basic{ font-family:"lato",sans-serif; color:#333; background:#222; }
-.basic main a{
-	color:#333;
-	font-weight:400;
+body{ color:#333; background:#222; }
+body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
+  color: #333;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
 }
-.basic main a:hover{
-	color:#68b545;
+.basic a{ color:#a5cf4c; }
+.basic a:hover{ text-decoration:none; }
+.nav-justified > li > a{
+	color:#fff;
+}
+.basic main a:hover,
+.nav-justified > li > a:hover{
+	color:#a5cf4c;
 }
 .site-title{
 	float:left;
-	margin:10px 30px 5px 0;
+	font-size:1px;
 	z-index:100;
 	position:relative;
 }
-.site-title img{
+.site-title a{
+	background:#a5cf4c;
+	padding:10px 50px 70px 10px;
+}
+.site-title svg{
+	min-width:50px;
 	max-height:90px;
 }
+.site-title svg path{
+	fill: #fff;
+}
+#site-navigation{ margin-top:30px; }
+.nav-justified > li > a{
+	margin-right:15px;
+}
+#header{
+	background:url(images/header.jpg) 0 30% no-repeat;
+	background-size:cover;
+	height:300px;
+}
+.page #header{ height:250px; background-position:0 40%; }
 @media (min-width: 768px) {
 #site-meta{
 	float:left;
@@ -44,20 +69,37 @@ body.basic{ font-family:"lato",sans-serif; color:#333; background:#222; }
 }
 }
 .nav > li{
-	line-height:50px;
+	line-height:18px;
 }
-.nav-justified > li.current-menu-item > a{ border-color:transparent; border-bottom-color:#b3b3b3; }
+.nav-justified{
+	float:right;
+	text-align:right;
+	width:auto;
+}
+.nav-justified > li{
+	width:auto;
+}
+.nav-justified > li > a{
+	padding:0;
+	font-weight:bold;
+	border:none;
+}
+.nav-justified > li > a:before{
+	content:"/ ";
+}
+.nav-justified > li.current-menu-item > a{ border-color:transparent; color:#a5cf4c; }
 .widget-menu{
 	margin-top:40px;
 }
 .page-title{ text-transform:capitalize; }
 .widget-menu h3.widget-title{
-	border-bottom:1px solid #b3b3b3;
+	border-bottom:1px solid #858585;
 	padding-bottom:10px;
 	margin-bottom:20px;
-	font-weight:700;
 	text-transform:uppercase;
-	color:#333;
+	font-weight:bold;
+	color:#a5cf4c;
+	font-size:18px;
 }
 .widget ul{
 	padding-left:0;
@@ -75,8 +117,8 @@ body.basic{ font-family:"lato",sans-serif; color:#333; background:#222; }
 .widget li span.cat,
 article h5{ line-height:10px; text-transform:uppercase; font-size:10px; line-height:1; display:inline-block; }
 article h5{ font-size:12px; }
-.widget li span.cat a,
-.basic main article h5 a{ color:#5399a4;}
+.widget li span.cat a{ color:#a5cf4c; font-weight:bold; font-size:12px;}
+.basic h5 a{ font-size:18px; font-family:'Noto Serif', serif; font-style:italic; }
 .widget li span.updated{
 	font-size:11px;
 	color:#999;
@@ -122,3 +164,159 @@ article{
     text-shadow: 0 0 7px #000;
     text-transform: uppercase;
 }.loading{ text-align:center; margin:120px 0; }
+/* CSS Document */
+
+/*Page Title for Template Pages*/
+
+h1.page-title{color: #fff;font-size: 36px;font-weight: 700;text-shadow: 0 0 7px #000;text-transform: uppercase;}
+.header-pos{background-position: center;background-size: cover;}
+#archive-header{ background:#000; padding:0; }
+#archive-header h1.page-title{ padding:0; margin-top:-85px; font-size:54px; font-weight:normal; font-family:"noto serif", serif; font-style:italic; text-align:center; text-transform:none; }
+
+/*===========================Home Page Css Starts=============================*/
+
+a.showcase-mgn{ margin-top:40px;min-height:195px; background:url(images/latest-project.jpg) no-repeat; background-size:cover; font-family: 'Noto Serif', serif; color:#fff; text-transform:none; font-size:36px; font-style:italic; text-align:right; padding:30px; text-shadow:0 0 5px #000; }
+a.showcase-mgn strong{ font-family:'Noto Sans', sans-serif; font-size:12px; text-transform:uppercase; color:#a5cf4c; font-style:normal; display:block; }
+a.showcase-mgn:hover,
+.style-guide-cta:hover,
+.lifestyle-images-cta:hover{ text-decoration:none; }
+.margn-custom{margin-top:6px;}
+.margn-custom img{margin-bottom:15px;}																																										
+
+/*===========================Home Page Css Ends=============================*/
+
+
+/*===========================Photoshoot Page Css Starts=============================*/
+
+.feature-img {float: left;width: 190px;}
+.showcase {float: left;margin-left: 10px;margin-top: 10px;}	
+.showcase img{display:block;margin-left:5px;}
+.product-container{margin-top:25px;clear:both;}
+.txt-product{margin-top:0px;margin-left:19px;float:left;}
+.txt-product h2{font-size:14px;color:#a1a1a1;text-transform:uppercase;margin-bottom:20px;}
+.txt-product a{color:#a1a1a1;font-size:15px;display:block;}
+.txt-product h3 a{text-transform:uppercase;font-size:14px;color:#a1a1a1;margin-top:38px;}
+.product-container h2.top-heading{color:#a1a1a1;font-size:18px;border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
+
+/*===========================Photoshoot Page Css Ends=============================*/
+
+
+/*===========================User Style Guide Css Starts=============================*/
+
+.user-container{margin-top:40px;clear:both;}
+.wdt-percent{float:left;width:360px;margin-right:16px;margin-bottom:18px;}
+.mgn2{margin-right:0px !important;}
+
+
+/*===========================User Style Guide Css Ends=============================*/
+
+
+/*===========================Testing Reports Css Starts=============================*/
+
+.user-container .top-heading {border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
+.user-container .top-heading h2{color:#a1a1a1;font-size:18px;float:left;margin-top:5px;}
+.wdt-percent h2{color:#a1a1a1;font-size:18px;border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
+.wdt-percent ul li a{}
+.user-container select{padding:5px;font-size:12px;}
+.fltr{float:right;}
+
+/*===========================Research Css Starts=============================*/
+
+.research-page li h5, .research-page li p{
+	margin-left: 0;
+}
+
+.research-page ul li ul li{
+	list-style: disc;
+	margin-left: 30px;
+}
+
+.research-page ul li ul{
+	margin-top: 20px;
+}
+
+
+/*===========================Sidebar Css Starts=============================*/
+
+
+.htc-sidebar {
+	position: relative;
+}
+
+.htc-sidebar ul{
+	list-style: none;
+	margin-left: 0;
+}
+
+.htc-sidebar li{
+	position: relative;
+	display: block;
+}
+
+.htc-sidebar i.fa {
+	color: #000;
+	font-size: 120%;
+	margin: 0 5px;
+	width: 20px;
+	position: absolute;
+	left: -30px;
+	top: -2px;
+}
+.basic .style-guide-cta,
+.basic .lifestyle-images-cta{
+	background:url(images/styleguide-cta.jpg) no-repeat;
+	background-size:cover;
+	color:#fff;
+	font-weight:bold;
+	border:none;
+	text-shadow:0 0 5px #000;
+}
+.basic .lifestyle-images-cta{
+	background:url(images/lifestyleimages-cta.jpg) no-repeat;
+}
+
+
+
+/*===========================Custom Media Quries==================================*/
+
+@media(max-width: 1024px) {
+	
+.wdt-percent{width:300px;}
+
+}
+@media(max-width: 991px){
+.nav-justified > li > a{
+	margin-right:9px;
+	font-size:12px;
+}
+}
+
+
+
+@media(max-width: 769px) {
+
+.wdt-percent{float:left;width:350px !important;margin-right:16px;margin-bottom:18px;}		
+	
+}
+
+@media(max-width: 480px) {
+
+.product-container{margin-top:25px;display:block;clear:both;}	
+.feature-img {float: none;text-align:center;display:block;margin:0 auto;}
+.showcase{margin:0 auto;float:none;display:block;text-align:center;}	
+.showcase img{display:inline-block;margin-right:2px;text-align:center;}			
+.txt-product{margin-top:0px;margin-left:0px;float:none;clear:both;text-align:center;}			
+.product-container h2.top-heading{color:#a1a1a1;font-size:18px;border-bottom:1px solid #CCCCCC;padding-bottom:11px;display:block;}
+.txt-product h3 a{margin-top:15px;}
+.txt-product h2{margin-bottom:12px;}
+.wdt-percent{float:none;margin-right:0px;margin-bottom:10px;width:auto !important;}
+.wdt-percent a img{display:block;text-align:center;width:100%;}
+
+
+}
+
+
+/*===========================Custom Media Quries==================================*/
+
+
+

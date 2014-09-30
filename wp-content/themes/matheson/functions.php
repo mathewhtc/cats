@@ -70,10 +70,7 @@ function bavotasan_setup() {
 
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
-
-	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style( array( 'library/css/admin/editor-style.css', bavotasan_font_url() ) );
-
+	
 	// This theme uses wp_nav_menu() in two location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'matheson' ) );
 
@@ -137,30 +134,6 @@ function bavotasan_styles() {
 	$bavotasan_theme_options = bavotasan_theme_options();
 	?>
 	<?php
-}
-
-/**
- * Register Open Sans and Raleway Google font.
- *
- * @since 1.0.2
- */
-function bavotasan_font_url() {
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Open Sans or Raleway, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	return ( 'off' !== _x( 'on', 'Google Fonts: on or off', 'matheson' ) ) ? add_query_arg( 'family', 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic', 'http://fonts.googleapis.com/css' ) : '';
-}
-
-add_action( 'admin_print_scripts-appearance_page_custom-header', 'bavotasan_header_admin_enqueue' );
-/**
- * Add font to Header admin page
- *
- * @since 1.0.2
- */
-function bavotasan_header_admin_enqueue( $hook ) {
-	wp_enqueue_style( 'google_fonts', bavotasan_font_url(), false, null, 'all' );
 }
 
 if ( ! function_exists( 'bavotasan_header_style' ) ) :
@@ -295,7 +268,6 @@ function bavotasan_add_js() {
 	wp_enqueue_script( 'theme', BAVOTASAN_THEME_URL .'/library/js/theme.js', array( 'bootstrap' ), '', true );
 	wp_enqueue_style( 'theme_stylesheet', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'google_fonts', bavotasan_font_url(), false, null, 'all' );
 	wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, null, 'all' );
 }
 endif; // bavotasan_add_js

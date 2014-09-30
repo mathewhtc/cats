@@ -13,6 +13,7 @@
 <!--[if IE 8]><html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic|Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +22,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if IE]><script src="<?php echo BAVOTASAN_THEME_URL; ?>/library/js/html5.js"></script><![endif]-->
 <?php wp_head(); ?>
-
-<link href="<?php bloginfo('stylesheet_directory'); ?>/custom.css" rel="stylesheet" type="text/css" />
-
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/core.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,7 +31,7 @@
 
 		<header id="header">
 			<div class="container header-meta">
-				<h1 class="site-title" ><a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/gangnam-style_007.gif"></a></h1>
+				<h1 class="site-title" ><a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/htc-logo.svg" class="svg"></a></h1>
 
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		          <i class="fa fa-bars"></i>

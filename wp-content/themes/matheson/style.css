@@ -6663,12 +6663,6 @@ body.basic {
   color: #282828;
   font-family: "Open Sans", sans-serif;
 }
-
-.basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
-  color: #282828;
-  font-family: Raleway, sans-serif;
-  font-weight: normal;
-}
 .basic h1 a, .basic h2 a, .basic h3 a, .basic h4 a, .basic h5 a, .basic h6 a {
   color: #282828;
 }

@@ -1,10 +1,10 @@
 === Ajax Load More ===
 Contributors: dcooney
 Donate link: http://connekthq.com/donate/
-Tags: ajax, query, loop, paging, filter, jquery, shortcode builder, shortcode, search, tags, category
+Tags: ajax, query, loop, paging, filter, jquery, shortcode builder, shortcode, search, tags, category, post types, taxonomy, post format, wmpl
 Requires at least: 3.6
-Tested up to: 3.9.2
-Stable tag: 2.2.0
+Tested up to: 4.0
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,11 +27,11 @@ Build complex WordPress queries using our shortcode builder then add the shortco
 
 Check out the **[demo site](http://connekthq.com/plugins/ajax-load-more/)** for more information!
 
-
+***
 
 = Shortcode Parameters =
 
-Ajax Load More accepts a number of paramaters to pass to the WordPress query. These parameters are passed via shortcode - don't worry, creating your shortcode is simple with our Shortcode Builder.
+Ajax Load More accepts a number of parameters that are passed to the WordPress query. These parameters are transferred via shortcode - don't worry, creating your shortcode is simple with our intuitive Shortcode Builder.
  
 *   **repeater** - Choose a repeater template (Add-on available). Default = ‘default‘
 *   **post_type** - Comma separated list of post types. Default = ‘post’
@@ -54,21 +54,38 @@ Ajax Load More accepts a number of paramaters to pass to the WordPress query. Th
 *   **transition** - Choose a posts reveal transition (slide/fade). Default = 'slide' 
 *   **button_label** - The label text for Load More button. Default = 'Older Posts'
 
-
+***
 
 = Example Shortcode =
 
     [ajax_load_more post_type="post, portfolio" repeater="default" posts_per_page="5" transition="fade" button_label="Older Posts"]
     
 = Demos =
-* **[Default](http://connekthq.com/plugins/ajax-load-more/examples/default)** - Out of the box functionality and styling
+* **[Default](http://connekthq.com/plugins/ajax-load-more/)** - Out of the box functionality and styling
 * **[Fade Transition](http://connekthq.com/plugins/ajax-load-more/examples/fade-transition/)** - Elements fade in as posts are loaded
-* **[Pause Loading](http://connekthq.com/plugins/ajax-load-more/examples/pause-loading/)** - Posts will not load until initiated by the user
+* **[Mansory](http://connekthq.com/plugins/ajax-load-more/examples/masonry/)** - Creating a flexible grid layout with Masonry JS
 * **[Multiple Instances](http://connekthq.com/plugins/ajax-load-more/examples/multiple-instances/)** - Include multiple Ajax Load More' on a single page
+* **[Pause Loading](http://connekthq.com/plugins/ajax-load-more/examples/pause-loading/)** - Posts will not load until initiated by the user
+* **[Search Results](http://connekthq.com/plugins/ajax-load-more/examples/search-results/)** - Returning results based on search terms
 
 *The [Custom Repeater Add-On](http://connekthq.com/plugins/ajax-load-more/custom-repeaters/) has been installed for use on each of our product demos*
 
+***
 
+= Callback Functions =
+The following functions are avaialble to be dispatched by Ajax Load More. 
+
+
+**Ajax Complete**
+
+The almComplete() function is triggered after every *successful* ajax call made by Ajax Load More.
+To utilize the almComplete() function simply place the following code inside your sites javascript file.
+
+    $.fn.almComplete = function(alm){
+    	// Your on complete code goes here
+    }
+
+***    
 
 = Add-ons =
 
@@ -76,9 +93,10 @@ The following Add-ons are available to increase the functionality of Ajax Load M
 
 **Custom Repeaters**
 
-The **[Custom Repeaters](http://connekthq.com/plugins/ajax-load-more/custom-repeaters)** add-on will add five additional customizeable repeater templates and allow you to select unique templates for different content types throughout your theme.
+The **[Custom Repeaters](http://connekthq.com/plugins/ajax-load-more/custom-repeaters)** add-on will add an additional five repeater templates allowing you to create unique templates for different content types throughout your theme.
 [Get More Information](http://connekthq.com/plugins/ajax-load-more/custom-repeaters)
 
+***
 
 = Tested Browsers =
 
@@ -90,12 +108,12 @@ The **[Custom Repeaters](http://connekthq.com/plugins/ajax-load-more/custom-repe
 * Android (Native + Chrome)
 * BB10
 
-
+***
 
 = Website =
 http://connekthq.com/ajax-load-more/
 
-
+***
 
 = Please Rate Ajax Load More! =
 
@@ -171,13 +189,25 @@ How to install Ajax Load More.
 
 == Changelog ==
 
+= 2.2.2 =
+* Adding callback function that is dispatched once a successful ajax call is made. $.fn.almComplete(alm). 
+* Adding WPML support for ICL_LANGUAGE_CODE - A 'lang' atributed is added dynamically if WPML is installed.
+* Making JS variables and functions publically accessible.
+
+= 2.2.1 =
+* Fixed php notice/warning that would trigger if WP_DEBUG was enabled. 
+* Adding minified core JS.
+* Adding global option to disable shortcode button in the content editor.
+* Adding touchmove js event for faster scroll detection on mobile devices.
+* Code clean up, removing unused functions.
+
 = 2.2.0 =
 * Adding Post Format query.
 * Adding syntax highlighting for Repeater Templates with CodeMirror (http://codemirror.net/).
 * Adding custom alias integration for Repeater Templates (Only for the custom repeater add-on).
 * Adding button preview on settings page.
-* Adding 'White' button style
-* Updated .pot language file
+* Adding 'White' button style.
+* Updated .pot language file.
 
 = 2.1.3 =
 * Fixed issue causing the Ajax Load More menu to not show on some admin screen do to location conflict with another plugin.

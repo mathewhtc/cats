@@ -26,6 +26,11 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
   font-family: 'Noto Sans', sans-serif;
   font-weight: normal;
 }
+.basic h5{
+	font-family: "Noto Serif",serif;
+    font-size: 18px;
+    font-style: italic;
+}
 .basic a{ color:#a5cf4c; }
 .basic a:hover{ text-decoration:none; }
 .nav-justified > li > a{
@@ -61,7 +66,8 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 	background-size:cover;
 	height:300px;
 }
-.page #header{ height:250px; background-position:0 40%; }
+.page #header,
+.single #header{ height:250px; background-position:0 40%; }
 @media (min-width: 768px) {
 #site-meta{
 	float:left;
@@ -114,10 +120,10 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 	display:block;
 	margin:0 0 2px 33px;
 }
-.widget li span.cat,
+span.cat,
 article h5{ line-height:10px; text-transform:uppercase; font-size:10px; line-height:1; display:inline-block; }
 article h5{ font-size:12px; }
-.widget li span.cat a{ color:#a5cf4c; font-weight:bold; font-size:12px;}
+span.cat a{ color:#a5cf4c; font-weight:bold; font-size:12px;}
 .basic h5 a{ font-size:18px; font-family:'Noto Serif', serif; font-style:italic; }
 .widget li span.updated{
 	font-size:11px;
@@ -145,13 +151,17 @@ article h5{ font-size:12px; }
 article{
 	padding-top:40px;
 }
+.time-sorter{ padding:0; margin:0; text-align:center; }
+.time-sorter li{ list-style:none; display:inline-block; margin:10px; font-size:12px; text-transform:uppercase; color:#a5cf4c; }
+.time-sorter li a{ color:#858585;font-weight:bold; }
 .entry-meta{ color:#999; margin-top:0; }
-.psdlinks{ border:1px solid #E6E6E6; padding:15px 0; }
-.psdlinks .widget-title{ font-size:14px; text-transform:uppercase; border-bottom:1px solid #e6e6e6; padding:0 15px 5px; }
+.psdlinks{}
+.psdlinks .widget-title{ font-size:14px; text-transform:uppercase; color:#858585; margin-bottom:15px; }
 .psd-links{ padding:0 15px; }
-.psd-links li{ list-style:none; }
-.psd-links li a{ font-size:12px; }
-.psd-links li .fa{ float:left; font-size:120%; margin:5px 10px 5px 0; color:#68b545; }
+.psd-links li{ list-style:none; margin-bottom:15px; }
+.psd-links li a{ font-size:16px; font-family:"Noto Serif", serif; font-style:italic; color:#333; }
+.psd-links li .fa{ float:left; font-size:120%; margin:5px 10px 5px 0; color:#a5cf4c; }
+.psd-links li p{ padding-top:2px; }
 
 .category #archive-header{
 	background-position:center;
@@ -168,10 +178,11 @@ article{
 
 /*Page Title for Template Pages*/
 
-h1.page-title{color: #fff;font-size: 36px;font-weight: 700;text-shadow: 0 0 7px #000;text-transform: uppercase;}
 .header-pos{background-position: center;background-size: cover;}
 #archive-header{ background:#000; padding:0; }
-#archive-header h1.page-title{ padding:0; margin-top:-85px; font-size:54px; font-weight:normal; font-family:"noto serif", serif; font-style:italic; text-align:center; text-transform:none; }
+.basic .page-title,
+.basic .entry-title{ color:#fff; text-shadow: 0 0 7px #000; padding:0; margin-top:-85px; font-size:54px; font-weight:normal; font-family:"noto serif", serif; font-style:italic; text-align:center; text-transform:none; }
+.basic .entry-title{ text-align:left; margin:0; font-size:36px; color:#333; text-shadow:none; }
 
 /*===========================Home Page Css Starts=============================*/
 
@@ -185,18 +196,36 @@ a.showcase-mgn:hover,
 
 /*===========================Home Page Css Ends=============================*/
 
+.wp-caption{
+	border:none;
+	background:none;
+	padding:0;
+	text-align:left;
+	float:left;
+	width:48%;
+}
+.wp-caption + .wp-caption{
+	margin-left:2%;
+}
+.wp-caption p.wp-caption-text{ text-transform:uppercase; font-size:12px; color:#858585; padding-top:0px !important; }
+
 
 /*===========================Photoshoot Page Css Starts=============================*/
 
 .feature-img {float: left;width: 190px;}
 .showcase {float: left;margin-left: 10px;margin-top: 10px;}	
 .showcase img{display:block;margin-left:5px;}
-.product-container{margin-top:25px;clear:both;}
+.product-container{ margin:15px 0 10px;clear:both;}
 .txt-product{margin-top:0px;margin-left:19px;float:left;}
 .txt-product h2{font-size:14px;color:#a1a1a1;text-transform:uppercase;margin-bottom:20px;}
 .txt-product a{color:#a1a1a1;font-size:15px;display:block;}
 .txt-product h3 a{text-transform:uppercase;font-size:14px;color:#a1a1a1;margin-top:38px;}
-.product-container h2.top-heading{color:#a1a1a1;font-size:18px;border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
+.product-container h2.top-heading{ font-size:24px; color:#333; font-family:"Noto Serif", serif; font-style:italic; }
+.featured-img-main{ width:400px; float:left; margin-right:30px; }
+.basic .photoshoot-links h2{ margin:0 0 10px; font-size:14px; text-transform:uppercase; font-weight:bold; color:#a5cf4c; }
+.photoshoot-links ul{ padding:0; }
+.photoshoot-links li{ list-style:none; margin:0 0 15px; padding:0; }
+.photoshoot-links li a{ font-size:14px; color:#858585; }
 
 /*===========================Photoshoot Page Css Ends=============================*/
 
@@ -213,12 +242,34 @@ a.showcase-mgn:hover,
 
 /*===========================Testing Reports Css Starts=============================*/
 
-.user-container .top-heading {border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
-.user-container .top-heading h2{color:#a1a1a1;font-size:18px;float:left;margin-top:5px;}
+.user-container .clearfix {border-bottom:1px solid #CCCCCC;padding-bottom:11px; margin-bottom:20px; }
+.user-container h2.top-heading{
+	font-family:"noto serif", serif;
+	margin:7px 0 0;
+	font-style:italic;
+	float:left;
+}
+.user-container h2.top-heading .status{
+	font-family:"noto sans", sans-serif;
+	font-size:14px;
+	text-transform:uppercase;
+	color:#666;
+	font-style:normal;
+	display:block;
+	color:#a5cf4c;
+	font-weight:bold;
+}
+.user-container .top-heading h2{ float:left; margin:3px 0 0; color:#a5cf4c; font-size:21px; text-transform:uppercase; }
 .wdt-percent h2{color:#a1a1a1;font-size:18px;border-bottom:1px solid #CCCCCC;padding-bottom:11px;}
-.wdt-percent ul li a{}
 .user-container select{padding:5px;font-size:12px;}
 .fltr{float:right;}
+#finished-test{ margin:10px 100px 30px; }
+.summary h4{
+	font-size:18px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#a5cf4c;
+}
 
 /*===========================Research Css Starts=============================*/
 
@@ -226,14 +277,35 @@ a.showcase-mgn:hover,
 	margin-left: 0;
 }
 
-.research-page ul li ul li{
-	list-style: disc;
-	margin-left: 30px;
+.research-page ul li ol li{
+	list-style:decimal;
+	margin:0 0 15px 0;
+	font-size:24px;
+	font-family:"noto serif", serif;
+	color:#999;
 }
 
-.research-page ul li ul{
+.research-page ul li ol li p{
+	font-size:16px;
+	font-family:"Noto Serif", serif;
+	font-style:italic;
+	margin-top:-15px;
+}
+
+.research-page ul li ol li span.cat{
+	vertical-align:text-top;
+	padding-top:6px;
+}
+
+.research-page ul li ol li p a{
+	color:#333;
+}
+
+.research-page ul li ol{
 	margin-top: 20px;
 }
+
+.back{ text-align:right; font-size:12px; }
 
 
 /*===========================Sidebar Css Starts=============================*/
@@ -265,6 +337,7 @@ a.showcase-mgn:hover,
 .basic .style-guide-cta,
 .basic .lifestyle-images-cta{
 	background:url(images/styleguide-cta.jpg) no-repeat;
+	background-color: rgba(0,0,0,.8);
 	background-size:cover;
 	color:#fff;
 	font-weight:bold;
@@ -273,7 +346,10 @@ a.showcase-mgn:hover,
 }
 .basic .lifestyle-images-cta{
 	background:url(images/lifestyleimages-cta.jpg) no-repeat;
+	background-size:cover;
 }
+
+#footer{ margin-top:30px; }
 
 
 

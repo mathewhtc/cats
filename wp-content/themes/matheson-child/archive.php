@@ -71,32 +71,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-<?php } elseif(is_category('user-research')) { ?>         
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-8">
-            	<div class="widget widget-menu">
-                	<h3 class="widget-title">Testing Reports</h3	>
-                    <ul>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    	<li>test</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-            	<?php get_sidebar(); ?>
-            </div>
-        </div>
-    </div>
 <?php } ?>
 
 <?php get_footer(); ?>

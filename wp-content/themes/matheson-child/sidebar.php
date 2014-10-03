@@ -10,10 +10,11 @@
 <?php if(!is_front_page() ): ?>
     <div class="widget widget-menu">
     	<a href="/style-guide" class="cta style-guide-cta">View our Style Guide</a>
-        <a href="#" class="cta lifestyle-images-cta">Lifestyle Image Selects</a>
+        <a href="/photoshoots" class="cta lifestyle-images-cta">Lifestyle Image Selects</a>
     </div>
 <?php endif; ?>
 <div class="htc-sidebar">
+<h4>/ Resources</h4>
 <?php dynamic_sidebar( 'sidebar' ) ?>
 </div>
 

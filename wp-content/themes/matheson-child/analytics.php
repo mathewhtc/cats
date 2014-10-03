@@ -2,7 +2,7 @@
 
 /*
 
-Template Name: Research
+Template Name: Analytics
 
  */
 
@@ -21,28 +21,28 @@ get_header();
     </div>
   </div>
 </header>
-<div class="container">
+<div class="container analytics">
   <div class="row">
     <div class="col-md-8">
       <div class="user-container clearfix">
         <div class="top-heading clearfix">
-          <h2>/ Testing Reports <b>By
+          <h2>/ Analytics Reports <b>By
             <?php if(isset($wp_query->query_vars['test-sort'])) {
 
 $test_sort = urldecode($wp_query->query_vars['test-sort']); echo ucfirst($test_sort);
 
-} else{$test_sort = "sprint"; echo ucfirst($test_sort); }?>
+} else{$test_sort = "content"; echo ucfirst($test_sort); }?>
             </b></h2>
           <select class="fltr" name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
             <option value="index.php?test-sort=content" <?php if($test_sort == 'content'){?>selected="selected"<?php }?>>SORT BY CONTENT</option>
-            <option value="index.php?test-sort=sprint" <?php if($test_sort == 'sprint'){?>selected="selected"<?php }?>>SORT BY SPRINT</option>
+            <option value="index.php?test-sort=country" <?php if($test_sort == 'country'){?>selected="selected"<?php }?>>SORT BY COUNTRY</option>
           </select>
         </div>
         <div class="widget research-page">
           <?php 			
-			if($test_sort == 'sprint'){
-				$tax = 'sprint';
-				$link = '/detail/?sprint=';
+			if($test_sort == 'country'){
+				$tax = 'country';
+				$link = '/detail/?country=';
 			}
 
 if($test_sort == 'content'){
@@ -51,27 +51,21 @@ if($test_sort == 'content'){
 }
 $tags = get_terms($tax);
 $i=1; foreach ( $tags as $tag ) {
-	query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 20, $tax => $tag->slug ) );
+	query_posts(array ( 'post_type' => 'analytics', 'posts_per_page' => 20, $tax => $tag->slug ) );
 		if( have_posts() ) {?>
           <div class="wdt-percent<?php if(is_float($i/2)){?> mgn2<?php } ?>">
             <ul>
-              <li><h5><a href="<?php echo $link; echo $tag->term_id; ?>"><?php echo $tag->name;?></a></h5>
+              <li><h5 class="topic-title"><a href="<?php echo $link; echo $tag->term_id; ?>"><?php echo $tag->name;?></a></h5>
                 <ol>
                   <?php while ( have_posts() ) { the_post(); ?>
                   	<li>
-						<?php if($tax == 'sprint'){
-							$posttags = get_the_terms($post->ID, 'section');
-							$count=0;
-							if ($posttags) {
-								foreach($posttags as $tag) {
-								$count++;
-								if (1 == $count) { ?>
-									<span class="cat"><a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a></span>
-							<?php }
-							}
-						}
-                    } ?>
-                  <p><a href="/detail/?post-id=<?php echo get_the_ID();?>"><?php echo get_the_title(); ?></a></p>	</li>
+                		<h6><a href="/report/?post-id=<?php echo get_the_ID();?>"><?php echo get_the_title(); ?></a></h6>
+                        <p><a href="/report/?post-id=<?php echo get_the_ID();?>">View details</a>
+						<?php if(strpos(get_field("report_file", $post->ID)) !== false) { ?>
+                        &nbsp; | &nbsp;<a href="<?php echo get_field("report_file", $post->ID); ?>" target="_blank"><i class="fa fa-file"></i>
+ Read Report</a>
+                        <?php } ?></p>
+                    </li>
                   <?php $post_meta = get_post_meta(get_the_ID());
 				  } ?>
                 </ol>

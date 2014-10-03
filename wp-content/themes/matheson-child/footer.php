@@ -24,8 +24,8 @@
 
 <script>
 function loadContent(post_link){
-	jQuery("#single-post-container").html('<div class="loading"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ajax-loader.gif"></div>');
-    jQuery("#single-post-container").load(post_link+" #inner_post_content");
+	jQuery("#ajax-container").html('<div class="loading"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ajax-loader.gif"></div>');
+    jQuery("#ajax-container").load(post_link+" #ajax-container");
         return false;
 }
    jQuery(document).ready(function(){

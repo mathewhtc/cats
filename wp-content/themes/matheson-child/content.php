@@ -15,6 +15,8 @@ $featured_image = ( has_post_thumbnail() && 'excerpt' == $bavotasan_theme_option
 				$mobilePSD = get_field('link_to_mobile_psd', get_the_ID());
 				$desktopPrev = get_field('desktop_psd_image_preview', get_the_ID());
 				$mobilePrev = get_field('mobile_psd_image_preview', get_the_ID());
+				$copydeck = get_field('link_to_copy_doc', get_the_ID());
+				$messagingframework = get_field('messaging_framework', get_the_ID());
 				
 			
 
@@ -121,6 +123,21 @@ if( !empty($mobilePrev) ):
           <?php } if($mobilePSD !=''){  ?>
           <li><i class="fa fa-file"></i>
             <p><a href="<?php echo $mobilePSD; ?>">Mobile PSD</a></p>
+          </li>
+          <?php } ?>
+        </ul>
+      </div>
+      <div class="psdlinks">
+        <h4 class="widget-title">/ Messaging</h4>
+        <ul class="psd-links">
+          <?php if($copydeck != ''){ ?>
+          <li><i class="fa fa-file"></i>
+            <p><a href="<?php echo $copydeck; ?>">Copy Deck</a></p>
+          </li>
+          <?php } ?>
+          <?php if($messagingframework != ''){ ?>
+          <li><i class="fa fa-file"></i>
+            <p><a href="<?php echo $messagingframework; ?>">Messaging Framework</a></p>
           </li>
           <?php } ?>
         </ul>

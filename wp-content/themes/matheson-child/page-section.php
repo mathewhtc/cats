@@ -6,24 +6,21 @@ Template Name: Section
 
  */
 
-get_header();
-
-?>
+get_header(); ?>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
       <h1 class="page-title">
-        <?php $section = urldecode($wp_query->query_vars['section']); $term = get_term_by('id', $section, 'section'); //print_r($term); 
-
-echo "Section: " . $term->name ;?>
+        <?php $section = urldecode($wp_query->query_vars['section']); $term = get_term_by('id', $section, 'section'); echo "Section: " . $term->name ;?>
       </h1>
     </div>
   </div>
 </div>
+<?php query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 10, 'section' => $term->slug ) ); if ( have_posts() ): $usertests = 1; echo $usertests; endif; wp_reset_query(); ?>
 <div class="container">
 <div class="row">
-  <div class="col-md-4">
+  <div class="<?php if($usertests==1){ echo 'col-md-4'; } else { echo 'col-md-8'; } ?>">
     <div class="widget widget-menu">
       <h3 class="widget-title">/ Projects</h3>
       <?php query_posts(array ( 'post_type' => 'project', 'posts_per_page' => 10, 'section' => $term->slug ) ); ?>
@@ -63,12 +60,12 @@ echo "Section: " . $term->name ;?>
       <?php endif; wp_reset_query(); ?>
     </div>
   </div>
+  <?php query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 10, 'section' => $term->slug ) ); if ( have_posts() ): ?>
   <div class="col-md-4">
     <div class="widget widget-menu">
       <h3 class="widget-title">/ User Research Reports</h3>
-      <?php query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 10, 'section' => $term->slug ) ); ?>
       <ul>
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
         <li>
           <?php 
 
@@ -100,9 +97,9 @@ echo "Section: " . $term->name ;?>
         </li>
         <?php endwhile; ?>
       </ul>
-      <?php endif; wp_reset_query(); ?>
     </div>
   </div>
+      <?php endif; wp_reset_query(); ?>
   <div class="col-md-4">
     <?php get_sidebar(); ?>
   </div>

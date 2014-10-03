@@ -67,9 +67,8 @@ function getFiletype($filetocheck){
     <div class="col-md-12">
       <div class="user-container clearfix">
         <div class="clearfix">
+          <?php $test_query = array ( 'post_type' => 'test', 'orderby'=> 'date', 'order'=> 'ASC', 'posts_per_page' => 10,  'sprint' => $term[0]->name); ?>
           <h2 class="top-heading"><span class="status">/ <?php echo get_field("upcoming/tested", $post_id);?><?php if(get_field("date_testing_was_performed", $post_id) != ""){ $date = new DateTime(get_field("date_testing_was_performed", $post_id)); echo '&nbsp;' . $date->format('F j, Y'); } ?></span><?php echo get_the_title();?></h2>
-          <?php 
-		  	$test_query = array ( 'post_type' => 'test', 'orderby'=> 'date', 'order'=> 'ASC', 'posts_per_page' => 10,  'sprint' => $term[0]->name); ?>
           	<select class="fltr" name="menu" onChange="loadContent(this.options[this.selectedIndex].value);">
             <?php query_posts($test_query ); 
 			  if( have_posts() ) { while ( have_posts() ) { the_post();?>
@@ -81,8 +80,7 @@ function getFiletype($filetocheck){
 					  <div id="inner_post_content">
                         <div id="finished-test">
                         <?php if(strpos(get_field("link_to_final_pdf_report", $post_id),'pdf') !== false) { ?>
-                        <h5><a href="<?php echo get_field("link_to_final_pdf_report", $post_id); ?>" target="_blank"><i class="fa fa-file-pdf-o"></i>
- View Final Report (PDF)</a></h5>
+                        <h5><a href="<?php echo get_field("link_to_final_pdf_report", $post_id); ?>" target="_blank"><i class="fa fa-download"></i>&nbsp;View Final Report (PDF)</a></h5>
                         <?php } 
 						if(get_field("summary", $post_id) != ""){ ?>
                         <div class="summary">

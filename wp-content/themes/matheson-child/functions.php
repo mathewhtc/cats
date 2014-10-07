@@ -88,7 +88,6 @@ register_post_type( 'resource', array(
    ),
   'description' => 'Resources',
   'public' => true,
-  'menu_position' => 20,
   'supports' => array( 'title', 'editor', 'custom-fields' ),
 ));
 }

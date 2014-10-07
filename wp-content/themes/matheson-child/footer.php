@@ -13,7 +13,8 @@
 		<div id="footer-content" class="container">
 			<div class="row">
 				<div class="copyright col-lg-12">
-					<span class="pull-left"><?php printf( __( 'Copyright &copy; %s %s. All Rights Reserved.', 'matheson' ), date( 'Y' ), ' <a href="' . home_url() . '">' . 'HTC' .'</a>' ); ?></span>
+					<span class="pull-left">Copyright &copy;<?php the_date('Y'); ?> <a href="http://htc.com" id="footer-link">HTC</a>. All Rights Reserved. </span>
+                    <span class="pull-right"><a href="/about-the-team">About the Team</a></span>
 				</div><!-- .col-lg-12 -->
 			</div><!-- .row -->
 		</div><!-- #footer-content.container -->

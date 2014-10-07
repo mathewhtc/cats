@@ -16,8 +16,8 @@ $end_date = $wp_query->query_vars['end-date'];
 }
 $date_range =  array(
         'after' => $start_date, 'before' => $end_date);
-query_posts(array ( 'post_type' => 'project', 'meta_key' => 'status', 'meta_value' => 'Complete', 'posts_per_page' => 10, 'date_query' => $date_range) ); ?>
-                    <ul>
+query_posts(array ( 'post_type' => 'project', 'meta_key' => 'status', 'meta_value' => 'Complete', 'posts_per_page' => -1, 'date_query' => $date_range) ); ?>
+               <ul>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <li>
                     	<?php 
@@ -31,7 +31,7 @@ query_posts(array ( 'post_type' => 'project', 'meta_key' => 'status', 'meta_valu
    						 $count++;
     							if (1 == $count) {
       							?><a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a><?php
-    							}
+    							} else { ?>,&nbsp;<a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a><?php }
   						}
 			} ?></span></p>
                         <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>

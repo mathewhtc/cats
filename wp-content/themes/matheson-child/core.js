@@ -28,4 +28,11 @@ jQuery( document ).ready(function() {/*
 		
 		}, 'xml');
 	});
+	
+	jQuery('#footer-link').hover(
+		function() {
+			jQuery(this).after('<div id="hicats"><img src="/gangnam-style_007.gif"></div>');
+		}, function(){
+			jQuery('#hicats').remove();
+		});
 });

@@ -70,7 +70,6 @@ if( !empty($mobilePrev) ):
 				
 				
 				
-<?php if(!empty($desktopPSD) || !empty($mobilePrev)){ ?>
   <div class="row">
     <div class="col-md-8">
       <div class="entry-content">
@@ -113,6 +112,7 @@ if( !empty($mobilePrev) ):
       
     </div>
     <div class="col-md-4">
+<?php if(!empty($desktopPSD) || !empty($mobilePrev)){ ?>
       <div class="psdlinks">
         <h4 class="widget-title">/ PSD Templates</h4>
         <ul class="psd-links">
@@ -127,6 +127,8 @@ if( !empty($mobilePrev) ):
           <?php } ?>
         </ul>
       </div>
+<?php } ?>
+<?php if(!empty($copydeck) || !empty($messagingframework)){ ?>
       <div class="psdlinks">
         <h4 class="widget-title">/ Messaging</h4>
         <ul class="psd-links">
@@ -142,14 +144,8 @@ if( !empty($mobilePrev) ):
           <?php } ?>
         </ul>
       </div>
+<?php } ?>
     </div>
   </div>
-  <?php } else { ?>
-  <div class="entry-content">
-    <?php the_content(); ?>
-  </div>
-  <!-- .entry-content -->
-  
-  <?php } ?>
 </article>
 <!-- #post-<?php the_ID(); ?> -->

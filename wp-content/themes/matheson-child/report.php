@@ -68,7 +68,7 @@ function getFiletype($filetocheck){
       <div class="user-container clearfix">
         <div class="clearfix">
           <?php $test_query = array ( 'post_type' => 'test', 'orderby'=> 'date', 'order'=> 'ASC', 'posts_per_page' => 10,  'sprint' => $term[0]->name); ?>
-          <h2 class="top-heading"><span class="status">/ Tested <?php echo get_post_modified_time('M d Y', $post->ID); ?></span><?php echo get_the_title();?></h2>
+          <h2 class="top-heading"><span class="status">Tested <?php echo get_post_modified_time('M d Y', $post->ID); ?></span><?php echo get_the_title();?></h2>
 					</div>
 					<div class="content row" id="single-post-container">
 					  <div id="inner_post_content" class="col-md-8">

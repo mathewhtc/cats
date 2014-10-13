@@ -65,10 +65,10 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 #header{
 	background:url(images/header.jpg) 0 30% no-repeat;
 	background-size:cover;
-	height:300px;
+	height:150px;
 }
 .page #header,
-.single #header{ height:250px; background-position:0 40%; }
+.single #header{ height:150px; background-position:0 40%; }
 @media (min-width: 768px) {
 #site-meta{
 	float:left;
@@ -117,7 +117,7 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 	margin-bottom:15px;
 	position:relative;
 }
-.widget li h5{ font-size:16px; margin:0 0 2px; margin-left:33px; }
+.widget li h5{ font-size:16px; margin:0 0 2px; margin-left:10px; }
 .topic-title{ text-transform:capitalize; }
 .basic .analytics h5.topic-title a{
 	font-weight:bold;
@@ -131,7 +131,7 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 }
 .widget li p{ 
 	display:block;
-	margin:0 0 2px 33px;
+	margin:0 0 2px 10px;
 }
 span.cat,
 article h5{ line-height:10px; text-transform:uppercase; font-size:10px; line-height:1; display:inline-block; }
@@ -194,13 +194,14 @@ article{
 .header-pos{background-position: center;background-size: cover;}
 #archive-header{ background:#000; padding:0; }
 .basic .page-title,
-.basic .entry-title{ color:#fff; text-shadow: 0 0 7px #000; padding:0; margin-top:-85px; font-size:54px; font-weight:normal; font-family:"noto serif", serif; font-style:italic; text-align:center; text-transform:none; }
+.basic .entry-title{ color:#fff; text-shadow: 0 0 7px #000; padding:0; margin-top:-85px; font-size:54px; font-weight:normal; font-family:"noto serif", serif; font-style:italic; text-align:center; text-transform:none; margin-left:-85px; }
 .basic .entry-title{ text-align:left; margin:0; font-size:36px; color:#333; text-shadow:none; }
 
 /*===========================Home Page Css Starts=============================*/
 
 a.showcase-mgn{ margin-top:40px;min-height:195px; background:url(images/latest-project.jpg) no-repeat; background-size:cover; font-family: 'Noto Serif', serif; color:#fff; text-transform:none; font-size:36px; font-style:italic; text-align:right; padding:30px; text-shadow:0 0 5px #000; }
 a.showcase-mgn strong{ font-family:'Noto Sans', sans-serif; font-size:12px; text-transform:uppercase; color:#a5cf4c; font-style:normal; display:block; }
+a.showcase-mgn span{ text-transform:uppercase; font-weight:normal; font-family:'Noto Sans', sans-serif; font-size:16px; font-style:normal; }
 a.showcase-mgn:hover,
 .style-guide-cta:hover,
 .lifestyle-images-cta:hover{ text-decoration:none; }
@@ -380,11 +381,13 @@ a.showcase-mgn:hover,
 	width:10px;
 }
 
-.viewall-cta{
-	margin:20px 0 0;
+.basic h3 .viewall-cta{
 	text-transform:uppercase;
-	display:inline-block;
 	float:right;
+	font-size:12px;
+	font-weight:normal;
+	color:#666;
+	line-height:26px;
 }
 
 .back{ text-align:right; font-size:12px; }

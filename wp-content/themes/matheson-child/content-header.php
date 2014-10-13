@@ -26,7 +26,7 @@ $bavotasan_theme_options = bavotasan_theme_options();
   <?php the_title(); ?>
 </h1>
 <?php }else { ?>
-<h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
   <?php the_title(); ?>
   </a> </h1>
 <?php } // is_single() ?>

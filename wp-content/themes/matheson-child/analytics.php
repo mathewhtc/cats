@@ -26,7 +26,7 @@ get_header();
     <div class="col-md-8">
       <div class="user-container clearfix">
         <div class="top-heading clearfix">
-          <h2>/ Analytics Reports <b>By
+          <h2>Analytics Reports <b>By
             <?php if(isset($wp_query->query_vars['test-sort'])) {
 
 $test_sort = urldecode($wp_query->query_vars['test-sort']); echo ucfirst($test_sort);

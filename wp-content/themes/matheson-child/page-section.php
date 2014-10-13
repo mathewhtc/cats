@@ -24,33 +24,23 @@ get_header(); ?>
         <div class="row">
           <div class="<?php if($usertests==1){ echo 'col-md-6'; } else { echo 'col-md-12'; } ?>">
             <div class="widget widget-menu">
-              <h3 class="widget-title">/ Projects</h3>
+              <h3 class="widget-title">Projects</h3>
               <?php query_posts(array ( 'post_type' => 'project', 'posts_per_page' => 10, 'section' => $term->slug ) ); ?>
               <ul>
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <li>
-                  <?php 
-                                    $status = get_post_meta(get_the_ID(), 'status');
-                                            if($status == "active") {
-                                                echo '<i class="fa fa-pencil" title="active"></i>';
-                                            } else {
-                                                echo '<i class="fa fa-archive" title="final"></i>';
-                                        }
-                                    //$project = get_the_term_list($post->ID, 'project');
-                                ?>
                   <p><span class="cat">
-                    <?php $posttags = get_the_terms($post_ID, 'section');
-                        $count=0;
-                            if ($posttags) {
-                                foreach($posttags as $tag) {
-                                 $count++;
-                                        if (1 == $count) {
-                                        ?>
-                    <a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a>
-                    <?php
-                                        }
-                                }
-                    } ?>
+                    <?php $posttags = get_the_terms($post->ID, 'section');
+				$count=0;
+					if ($posttags) {
+  						foreach($posttags as $tag) {
+   						 $count++;
+						 if (1 == $count) { ?>
+                          <a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a>
+                          <?php } else { ?>
+                          ,&nbsp;<a href="/section/?section=<?php echo $tag->term_id;?>"><?php echo $tag->name;?></a>
+                          <?php } }
+                                } ?>
                     </span></p>
                   <h5><a href="<?php the_permalink() ?>">
                     <?php the_title(); ?>
@@ -65,20 +55,10 @@ get_header(); ?>
           <?php query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 10, 'section' => $term->slug ) ); if ( have_posts() ): ?>
           <div class="col-md-6">
             <div class="widget widget-menu">
-              <h3 class="widget-title">/ User Research Reports</h3>
+              <h3 class="widget-title">User Research Reports</h3>
               <ul>
                 <?php while ( have_posts() ) : the_post(); ?>
                 <li>
-                  <?php 
-        
-                                    $status = get_post_meta(get_the_ID(), 'status');
-                                            if($status == "active") {
-                                                echo '<i class="fa fa-eye" title="active"></i>';
-                                            } else {
-                                                echo '<i class="fa fa-check-square" title="final"></i>';     
-                                        }
-                                    //$project = get_the_term_list($post->ID, 'project');
-                                ?>
                   <p><span class="cat">
                     <?php $posttags = get_the_terms($post->ID, 'section');
                         $count=0;
@@ -111,7 +91,7 @@ get_header(); ?>
         <div class="row">
           <div class="col-md-12">
             <div class="widget widget-menu">
-              <h3 class="widget-title">/ Analytics Reports</h3>
+              <h3 class="widget-title">Analytics Reports</h3>
               <ul>
                 <?php  while ( have_posts() ) : the_post(); ?>
                 <li>

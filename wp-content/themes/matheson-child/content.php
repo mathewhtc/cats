@@ -114,15 +114,15 @@ if( !empty($mobilePrev) ):
     <div class="col-md-4">
 <?php if(!empty($desktopPSD) || !empty($mobilePrev)){ ?>
       <div class="psdlinks">
-        <h4 class="widget-title">/ PSD Templates</h4>
+        <h4 class="widget-title">Design Files</h4>
         <ul class="psd-links">
           <?php if($desktopPSD != ''){ ?>
           <li><i class="fa fa-file"></i>
-            <p><a href="<?php echo $desktopPSD; ?>">Desktop PSD</a></p>
+            <p><a href="<?php echo $desktopPSD; ?>">Desktop</a></p>
           </li>
           <?php } if($mobilePSD !=''){  ?>
           <li><i class="fa fa-file"></i>
-            <p><a href="<?php echo $mobilePSD; ?>">Mobile PSD</a></p>
+            <p><a href="<?php echo $mobilePSD; ?>">Mobile</a></p>
           </li>
           <?php } ?>
         </ul>
@@ -130,7 +130,7 @@ if( !empty($mobilePrev) ):
 <?php } ?>
 <?php if(!empty($copydeck) || !empty($messagingframework)){ ?>
       <div class="psdlinks">
-        <h4 class="widget-title">/ Messaging</h4>
+        <h4 class="widget-title">Messaging</h4>
         <ul class="psd-links">
           <?php if($copydeck != ''){ ?>
           <li><i class="fa fa-file"></i>

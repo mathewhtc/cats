@@ -20,10 +20,6 @@ query_posts(array ( 'post_type' => 'project', 'meta_key' => 'status', 'meta_valu
                <ul>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <li>
-                    	<?php 
-                            echo '<i class="fa fa-file-text" title="complete"></i>';
-			    //$project = get_the_term_list($post->ID, 'project');
-                        ?>
                         <p><span class="cat"><?php $posttags = get_the_terms($post->ID, 'section');
 				$count=0;
 					if ($posttags) {

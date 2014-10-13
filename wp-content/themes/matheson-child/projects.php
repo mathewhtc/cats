@@ -31,13 +31,13 @@ get_header();
       <div class="row">
         <div class="col-md-6">
           <div class="widget widget-menu">
-            <h3 class="widget-title">/ Active</h3>
+            <h3 class="widget-title">Active</h3>
             <?php get_template_part( 'content', 'active' ); ?>
           </div>
         </div>
         <div class="col-md-6">
           <div class="widget widget-menu">
-            <h3 class="widget-title">/ Completed</h3>
+            <h3 class="widget-title">Completed</h3>
             <?php get_template_part( 'content', 'archived' ); ?>
           </div>
         </div>

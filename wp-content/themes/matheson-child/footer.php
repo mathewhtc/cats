@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="copyright col-lg-12">
 					<span class="pull-left">Copyright &copy;<?php the_date('Y'); ?> <a href="http://htc.com" id="footer-link">HTC</a>. All Rights Reserved. </span>
-                    <span class="pull-right"><a href="/about-the-team">About the Team</a></span>
+                    <span class="pull-right"><a href="/about-the-team">About the Team</a> | <a href="<?php echo get_edit_user_link(); ?>">My Account</a></span>
 				</div><!-- .col-lg-12 -->
 			</div><!-- .row -->
 		</div><!-- #footer-content.container -->

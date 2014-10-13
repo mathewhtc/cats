@@ -38,7 +38,7 @@ get_header();
     <?php }?>
         
         <div class="photoshoot-links">
-          <h2>/ Final Selects</h2>
+          <h2>Final Selects</h2>
           <ul>
       <?php if(isset($post_meta[link_to_google_drive_folder_lores][0]) && ( $post_meta[link_to_google_drive_folder_lores][0] != '')){?>
           <li><a href="<?php echo $post_meta[link_to_google_drive_folder_lores][0];?>" target="_blank">Lores Previews</a></li>

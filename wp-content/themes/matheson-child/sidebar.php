@@ -14,7 +14,7 @@
     </div>
 <?php endif; ?>
 <div class="htc-sidebar">
-<h4>/ Resources</h4>
+<h4>Resources</h4>
 <?php dynamic_sidebar( 'sidebar' ) ?>
 </div>
 

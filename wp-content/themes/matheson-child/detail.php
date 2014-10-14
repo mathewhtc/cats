@@ -87,7 +87,9 @@ function getFiletype($filetocheck){
                         	<h4>Testing Summary</h4>
 							<?php echo get_field("summary", $post_id);?>
                         </div>
-                        <?php } ?>
+						<?php if(strpos(get_field("link_to_final_pdf_report", $post_id),'pdf') !== false) { ?>
+                        	<embed src="<?php echo get_field("link_to_final_pdf_report", $post_id) ?>" width="100%" height="700px">
+                        <?php } } ?>
                         </div>
 						
 						<?php if(get_field("upload_file_1", $post_id) != ""){

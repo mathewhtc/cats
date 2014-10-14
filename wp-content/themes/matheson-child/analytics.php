@@ -61,7 +61,7 @@ $i=1; foreach ( $tags as $tag ) {
                   	<li>
                 		<h6><a href="/report/?post-id=<?php echo get_the_ID();?>"><?php echo get_the_title(); ?></a></h6>
                         <p><a href="/report/?post-id=<?php echo get_the_ID();?>">View details</a>
-						<?php if(strpos(get_field("report_file", $post->ID)) !== false) { ?>
+						<?php if(get_field("report_file", $post->ID) !== false) { ?>
                         &nbsp; | &nbsp;<a href="<?php echo get_field("report_file", $post->ID); ?>" target="_blank"><i class="fa fa-file"></i>
  Read Report</a>
                         <?php } ?></p>

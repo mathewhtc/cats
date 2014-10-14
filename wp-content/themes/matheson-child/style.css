@@ -52,7 +52,7 @@ body.basic, .basic h1, .basic h2, .basic h3, .basic h4, .basic h5, .basic h6 {
 	padding:10px 50px 70px 10px;
 }
 .site-title svg{
-	min-width:50px;
+	width:50px;
 	max-height:90px;
 }
 .site-title svg path{

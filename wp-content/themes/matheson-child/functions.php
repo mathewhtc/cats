@@ -3,6 +3,22 @@
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
 
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Heres to Cats';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', '/wp-content/themes/matheson-child/style-login.css' );
+    wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/style-login.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
 function projecttax_init() {
 	// create a new taxonomy
 	register_taxonomy(
@@ -227,4 +243,9 @@ function date_select($d, $section) {
 			<option value="index.php&d=6">All</option>
         </select>';
 }
+
+function register_my_menu() {
+  register_nav_menu('styleguide-menu',__( 'Style Guide Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
 ?>

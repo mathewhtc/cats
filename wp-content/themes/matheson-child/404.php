@@ -5,6 +5,16 @@
  * @since 1.0.0
  */
 get_header(); ?>
+         <div class="container title-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="page-title"><?php echo the_title();?></h1><!-- .page-title -->
+                </div>
+            </div>
+        </div>
+	</header>
+
+<main id="content">
 	<div class="container">
 		<div class="row">
 			<div id="primary" class="col-md-12">

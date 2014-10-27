@@ -10,35 +10,44 @@ get_header();
 
 ?>
 
-<header class="header-pos" id="archive-header" style="background-image:url(<?php header_image_url(); ?>);">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="page-title"><?php echo the_title();?></h1>
-        <!-- .page-title --> 
-        
-      </div>
-    </div>
-  </div>
-</header>
+         <div class="container title-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="page-title"><?php echo the_title();?></h1><!-- .page-title -->
+                </div>
+            </div>
+        </div>
+	</header>
+<?php if(isset($wp_query->query_vars['test-sort'])) { $test_sort = urldecode($wp_query->query_vars['test-sort']); } else{$test_sort = "content"; }?>
+<main id="content">
 <div class="container">
   <div class="row">
     <div class="col-md-8">
       <div class="user-container clearfix">
-        <div class="top-heading clearfix">
-          <h2>Testing Reports <b>By
-            <?php if(isset($wp_query->query_vars['test-sort'])) {
-
-$test_sort = urldecode($wp_query->query_vars['test-sort']); echo ucfirst($test_sort);
-
-} else{$test_sort = "sprint"; echo ucfirst($test_sort); }?>
-            </b></h2>
-          <select class="fltr" name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
-            <option value="index.php?test-sort=content" <?php if($test_sort == 'content'){?>selected="selected"<?php }?>>SORT BY CONTENT</option>
-            <option value="index.php?test-sort=sprint" <?php if($test_sort == 'sprint'){?>selected="selected"<?php }?>>SORT BY SPRINT</option>
-          </select>
+        <div class="researchtype-nav clearfix">
+        	<?php if($test_sort == 'content'){ ?><span class="active">Content</span>
+            <?php } else { ?><a href="/user-research/?test-sort=content">Content</a><?php } ?>
+        	<?php if($test_sort == 'sprint'){ ?><span class="active">Sprint</span>
+            <?php } else { ?><a href="/user-research/?test-sort=sprint">Sprint</a><?php } ?>
         </div>
-        <div class="widget research-page">
+        <div class="research-page">
+<?php $args = array ('order' => 'DESC', 'orderby' => 'date');  
+  if ($_POST['select'] == 'alphadown') { $args = array ( 'order' => 'ASC', 'orderby' => 'title');  }
+  if ($_POST['select'] == 'alphaup') { $args = array ( 'order' => 'DESC', 'orderby' => 'title'); }
+  if ($_POST['select'] == 'newest') { $args = array ( 'order' => 'DESC', 'orderby' => 'date'); }
+  if ($_POST['select'] == 'oldest') { $args = array ( 'order' => 'ASC', 'orderby' => 'date');  }
+?>
+ 
+ 
+<form method="post" id="photos-order">
+  Sort results by:
+  <select name="select" onchange='this.form.submit()'>
+    <option value="newest"<?php selected( $_POST['select'],'newest', 1 ); ?>>Newest</option>
+    <option value="oldest"<?php selected( $_POST['select'], 'oldest', 1 ); ?>>Oldest</option>
+    <option value="alphadown"<?php selected( $_POST['select'],'alphadown', 1 ); ?>>A-Z</option>
+    <option value="alphaup"<?php selected( $_POST['select'],'alphaup', 1 ); ?>>Z-A</option>
+  </select>
+</form>
           <?php 			
 			if($test_sort == 'sprint'){
 				$tax = 'sprint';
@@ -49,7 +58,9 @@ if($test_sort == 'content'){
 	$tax = 'section';
 	$link = '/section/?section=';
 }
-$tags = get_terms($tax);
+
+$tags = get_terms($tax,$args);
+
 $i=1; foreach ( $tags as $tag ) {
 	query_posts(array ( 'post_type' => 'test', 'posts_per_page' => 20, $tax => $tag->slug ) );
 		if( have_posts() ) {?>

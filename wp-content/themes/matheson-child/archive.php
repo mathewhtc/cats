@@ -15,8 +15,8 @@
 get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
-			<header id="archive-header" style="background-image:url(<?php header_image_url(); ?>);">
-				<div class="container">
+   
+				<div class="container title-container">
 					<div class="row">
 						<div class="col-sm-12">
 							<h1 class="page-title">
@@ -51,6 +51,8 @@ get_header(); ?>
 			</header><!-- #archive-header -->
         <?php endif; ?>
             
+
+<main id="content">
  <?php if(is_category('projects')){ ?>           
 	<div class="container">
     	<div class="row">

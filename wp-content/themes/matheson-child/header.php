@@ -12,6 +12,7 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
 <head>
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic|Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -22,6 +23,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if IE]><script src="<?php echo BAVOTASAN_THEME_URL; ?>/library/js/html5.js"></script><![endif]-->
 <?php wp_head(); ?>
+
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/core.js"></script>
 </head>
 
@@ -30,20 +32,12 @@
 	<div id="page">
 
 		<header id="header">
-			<div class="container header-meta">
-				<h1 class="site-title" ><a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/htc-logo.svg" class="svg"></a></h1>
-
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		          <i class="fa fa-bars"></i>
-		        </button>
-
-				<nav id="site-navigation" class="navbar" role="navigation">
-					<h3 class="sr-only"><?php _e( 'Main menu', 'matheson' ); ?></h3>
-					<a class="sr-only" href="#primary" title="<?php esc_attr_e( 'Skip to content', 'matheson' ); ?>"><?php _e( 'Skip to content', 'matheson' ); ?></a>
-
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'collapse navbar-collapse', 'menu_class' => 'nav nav-justified', 'fallback_cb' => 'bavotasan_default_menu', 'depth' => 2 ) ); ?>
-				</nav><!-- #site-navigation -->
-			</div>
-		</header>
-
-		<main>
+        	<div id="navigation">
+                <h1 class="site-title" ><a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/htc-logo.svg" class="svg"></a></h1>
+                <div class="menu-holder">
+                    <a href="#" class="open-nav">Open</a>
+                    <div class="nav-holder"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'bavotasan_default_menu', 'depth' => 2 ) ); ?><a href="#" class="close-nav">Close</a></div>
+                    <a href="#" class="open-search">Open search</a>
+                    <?php get_search_form(); ?> 
+                </div>
+            </div>

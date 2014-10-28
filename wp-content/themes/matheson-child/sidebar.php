@@ -11,7 +11,7 @@
     <div class="sidebar-menu">
         <a href="/photoshoots" class="cta photos-cta">Photoshoots</a>
     	<a href="/style-guide" class="cta style-guide-cta">Style Guide</a>
-    	<a href="https://drive.google.com/folderview?id=0B9tXm7YUBs5ocFc4N090VWNmcGs&usp=drive_web" class="cta iconography-cta">Iconography</a>
+    	<a href="https://drive.google.com/folderview?id=0B9tXm7YUBs5ocFc4N090VWNmcGs&usp=drive_web" class="cta iconography-cta" target="_blank">Iconography</a>
     </div>
 <?php endif; ?>
 <div class="htc-sidebar">

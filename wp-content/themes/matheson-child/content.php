@@ -65,35 +65,20 @@ if( !empty($mobilePrev) ):
 				
 	<div class="row">
     	<div class="col-md-12">
-		<?php if(!empty($wireframes) || !empty($prototypes)){ ?>
+		<?php if(!empty($wireframes) || !empty($prototypes) || !empty($desktopPSD) || !empty($mobilePSD) || !empty($copydeck) || !empty($messagingframework)){ ?>
             <ul class="psd-links">
-            	<li><h4 class="widget-title">User Experience:</h4></li>
-            <?php if($wireframes != ''){ ?>
-                <li><a href="<?php echo $wireframes; ?>">Wireframes</a></li>
-            <?php } ?>
-            <?php if($prototypes != ''){ ?>
-                <li><?php echo $prototypes; ?></li>
-            <?php } ?>
-            </ul>
-        <?php } ?>
-        <?php if(!empty($desktopPSD) || !empty($mobilePSD)){ ?>
-            <ul class="psd-links">
-                <li><h4 class="widget-title">Design Files:</h4></li>
-            <?php if($desktopPSD != ''){ ?>
-                <li><a href="<?php echo $desktopPSD; ?>">Desktop</a></li>
-                <?php } if($mobilePSD !=''){  ?>
-                <li><a href="<?php echo $mobilePSD; ?>">Mobile</a></li>
-            <?php } ?>
-            </ul>
-        <?php } ?>
-		<?php if(!empty($copydeck) || !empty($messagingframework)){ ?>
-            <ul class="psd-links">
-            	<li><h4 class="widget-title">Messaging:</h4></li>
             <?php if($copydeck != ''){ ?>
-                <li><a href="<?php echo $copydeck; ?>">Copy Deck</a></li>
-            <?php } ?>
-            <?php if($messagingframework != ''){ ?>
-                <li><a href="<?php echo $messagingframework; ?>">Messaging Framework</a></li>
+                <li><a href="<?php echo $copydeck; ?>" target="_blank">Copy Deck</a></li>
+            <?php } if($messagingframework != ''){ ?>
+                <li><a href="<?php echo $messagingframework; ?>" target="_blank">Messaging Framework</a></li>
+            <?php } if($wireframes != ''){ ?>
+                <li><a href="<?php echo $wireframes; ?>" target="_blank">Wireframes</a></li>
+            <?php } if($prototypes != ''){ ?>
+                <li><?php echo $prototypes; ?></li>
+            <?php } if($desktopPSD != ''){ ?>
+                <li><a href="<?php echo $desktopPSD; ?>" target="_blank">Desktop</a></li>
+            <?php } if($mobilePSD !=''){  ?>
+                <li><a href="<?php echo $mobilePSD; ?>" target="_blank">Mobile</a></li>
             <?php } ?>
             </ul>
         <?php } ?>
@@ -106,7 +91,7 @@ if( !empty($mobilePrev) ):
     
 			<?php if(!empty($desktopPSD)): ?>
                 <a href="<?php echo $durl; ?>" title="<?php echo $dtitle; ?>">
-                    <img src="<?php echo $dthumb; ?>" alt="<?php echo $dalt; ?>" width="<?php echo $dwidth; ?>" height="<?php echo $dheight; ?>" />
+                    <img src="<?php echo $dthumb; ?>" alt="<?php echo $dalt; ?>" />
                 </a>
 			<?php else: ?>
             	
@@ -115,7 +100,7 @@ if( !empty($mobilePrev) ):
         		<div class="col-md-4">
     		<?php if(!empty($mobilePrev)): ?>
                 <a href="<?php echo $murl; ?>" title="<?php echo $mtitle; ?>">
-                    <img src="<?php echo $mthumb; ?>" alt="<?php echo $malt; ?>" width="<?php echo $mwidth; ?>" height="<?php echo $mheight; ?>" />
+                    <img src="<?php echo $mthumb; ?>" alt="<?php echo $malt; ?>" />
                 </a>
 			<?php endif; ?>
             	</div>

@@ -70,27 +70,8 @@ $search = new WP_Query($search_query);
               <ul>
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <li>
-				<?php
-                $desktopPrev = get_field('desktop_psd_image_preview');
-                $mobilePrev = get_field('mobile_psd_image_preview');
-                if( !empty($desktopPrev) ){
-                    // thumbnail
-                    $dsize = 'large';
-                    $dthumb = $desktopPrev['sizes'][ $dsize ]; ?>
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="img-thumb"><img src="<?php echo $dthumb; ?>" alt="<?php the_title(); ?>" /></a>
-                <?php } else if( !empty($mobilePrev) ) {
-                    // thumbnail
-                    $msize = 'large';
-                    $mthumb = $mobilePrev['sizes'][ $msize ]; ?>    
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="img-thumb"><img src="<?php echo $mthumb; ?>" alt="<?php the_title(); ?>" /></a>
-                <?php } else { ?>
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="img-thumb default"></a>
-                <?php } ?>
-                                        
-                <?php  $meta_values = get_post_meta( $post->ID, 'status', true); ?>
-                <span class="status" title="active"><?php echo $meta_values; ?></span>
                 <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
-                <p>TAGS: <span class="cat">
+                <p><span class="cat">
                 <?php $posttags = get_the_terms($post->ID, 'section');
                 $count=0;
                 if ($posttags) {

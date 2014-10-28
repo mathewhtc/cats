@@ -41,15 +41,21 @@ jQuery( document ).ready(function() {/*
 		if(jQuery(e.target).hasClass('open-search')){
 			jQuery('.search-holder').addClass('show');
 		} else if(jQuery(e.target).hasClass('open-nav')){
-			jQuery('.nav-holder').addClass('show');
+			jQuery('.menu-holder').addClass('show');
+			jQuery('.close-nav').addClass('close-nav');
+			jQuery('.close-nav').removeClass('open-nav');
+			jQuery('.open-nav').addClass('close-nav');
+			jQuery('.open-nav').removeClass('open-nav');
 		} else if(jQuery(e.target).hasClass('close-nav')){
-			jQuery('.nav-holder').removeClass('show');
+			jQuery('.menu-holder').removeClass('show');
+			jQuery('.close-nav').addClass('open-nav');
+			jQuery('.close-nav').removeClass('close-nav');
 		} else {
 			if(jQuery(e.target).closest('.search-holder').length == 0){
 				jQuery('.search-holder').removeClass('show');
 			}
 			if(jQuery(e.target).closest('.nav-holder').length == 0){
-				jQuery('.nav-holder').removeClass('show');
+				jQuery('.menu-holder').removeClass('show');
 			}
 		}
 	});
@@ -68,12 +74,12 @@ jQuery( document ).ready(function() {/*
 		})
 	}
 	
-	jQuery('.bubbles').click(function(e){
+	/*jQuery('.bubbles').click(function(e){
 		var bubbleId = jQuery(this).attr('id');
 		jQuery('#' + bubbleId + '-popup').addClass('show');
 	})
 	jQuery('.close-btn').click(function(){
 		jQuery(this).parent('.bubbles-popup').removeClass('show');
-	})
+	})*/
 	
 });

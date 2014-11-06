@@ -49,7 +49,7 @@ register_post_type( 'project', array(
    ),
   'description' => 'Projects',
   'public' => true,
-  'menu_position' => 20,
+  'menu_position' => 1,
   'supports' => array( 'title', 'editor', 'custom-fields' ),
   'taxonomies' => array('section')
 ));
@@ -64,7 +64,7 @@ register_post_type( 'photoshoot', array(
    ),
   'description' => 'Photoshoots',
   'public' => true,
-  'menu_position' => 20,
+  'menu_position' => 2,
   'supports' => array( 'title', 'editor', 'custom-fields' )
 ));
 }
@@ -78,7 +78,7 @@ register_post_type( 'test', array(
    ),
   'description' => 'Tests',
   'public' => true,
-  'menu_position' => 20,
+  'menu_position' => 3,
   'supports' => array( 'title', 'editor', 'custom-fields' ),
   'taxonomies' => array('section', 'sprint')
 ));
@@ -93,7 +93,7 @@ register_post_type( 'analytics', array(
    ),
   'description' => 'Analytics Reports',
   'public' => true,
-  'menu_position' => 20,
+  'menu_position' => 4,
   'supports' => array( 'title', 'editor', 'custom-fields' ),
   'taxonomies' => array('section', 'country')
 ));
@@ -108,9 +108,60 @@ register_post_type( 'resource', array(
    ),
   'description' => 'Resources',
   'public' => true,
-  'supports' => array( 'title', 'editor', 'custom-fields' ),
+  'menu_position' => 5,
+  'supports' => array( 'title', 'editor', 'custom-fields' )
 ));
 }
+register_post_type('event', array(
+			'label' => __('Events'),
+			'singular_label' => __('Event'),
+			'public' => true,
+			'show_ui' => true,
+			'_builtin' => false,
+			'_edit_link' => 'post.php?post=%d',
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			'rewrite' => array("slug" => "event"),
+			'query_var' => "event",
+			'supports' => array('title','editor')
+));
+
+function modeltax_init() {
+	// create a new taxonomy
+	register_taxonomy(
+		'model',
+		'post',
+		array(
+			'hierarchal' => true,
+			'label' => __( 'Model' ),
+			'rewrite' => array( 'slug' => 'model' ),
+			'query_var' => true,
+			'capabilities' => array(
+				'manage__terms' => 'edit_posts',
+				'edit_terms' => 'manage_categories',
+				'delete_terms' => 'manage_categories',
+				'assign_terms' => 'edit_posts'
+			)
+		)
+	);
+}
+
+add_action( 'init', 'modeltax_init' );
+add_action( 'init', 'model_cpt' );
+
+function model_cpt() {
+register_post_type( 'model', array(
+  'labels' => array(
+    'name' => 'Models',
+    'singular_name' => 'Model',
+   ),
+  'description' => 'Models',
+  'public' => true,
+  'menu_position' => 6,
+  'supports' => array( 'title', 'custom-fields' )
+));
+}
+
 
 // Register Custom Taxonomy
 function custom_taxonomy() {

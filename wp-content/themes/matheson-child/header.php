@@ -41,3 +41,9 @@
                     <?php get_search_form(); ?> 
                 </div>
             </div>
+            <?php if(!is_page('home')) : ?>
+			<video autoplay loop poster="<?php bloginfo('stylesheet_directory'); ?>/header_projects.jpg" id="header-bgvid">
+                <source src="<?php bloginfo('stylesheet_directory'); ?>/video/header-video-final.webm" type="video/webm">
+                <source src="<?php bloginfo('stylesheet_directory'); ?>/video/header-video-final.mp4" type="video/mp4">
+            </video>
+            <?php endif; ?>

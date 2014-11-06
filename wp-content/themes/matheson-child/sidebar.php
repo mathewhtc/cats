@@ -9,7 +9,11 @@
 ?>
 <?php if(!is_front_page() ): ?>
     <div class="sidebar-menu">
+    <?php if(is_page('photoshoots')) { ?>
+    	<a href="/photoshoots/models" class="cta models-cta">Models</a>
+    <?php } else { ?>
         <a href="/photoshoots" class="cta photos-cta">Photoshoots</a>
+    <?php } ?>
     	<a href="/style-guide" class="cta style-guide-cta">Style Guide</a>
     	<a href="https://drive.google.com/folderview?id=0B9tXm7YUBs5ocFc4N090VWNmcGs&usp=drive_web" class="cta iconography-cta" target="_blank">Iconography</a>
     </div>
